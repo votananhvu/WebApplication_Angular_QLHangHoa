@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-body">
+      <h4><span class="fas fa-user"></span> Quản lý user</h4>
+      <hr>
+      <app-form-user [hidden]="isShowForm == true" (register)="onRegister($event)" [account_edit]="account_needs_edit" (edited)="updateAccount($event)"></app-form-user>
+  
+      <button [hidden]="isShowForm != true" class="btn btn-success" (click)="showForm()"> + New Account</button>
+      <button [hidden]="isShowForm == true" class="btn btn-secondary" (click)="closeForm()"> Đóng </button>
+      <hr>
+      <app-list-user [list-user]="accounts" (edit-user)="openUpdateForm($event)"></app-list-user>
+    </div>
+  </div>

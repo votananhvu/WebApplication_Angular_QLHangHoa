@@ -1,0 +1,26 @@
+<table class="table table-striped table-inverse table-responsive custom-table">
+    <thead class="thead-inverse">
+        <tr class="textTrColor bg-secondary">
+            <th>STT</th>
+            <th>Họ Và tên</th>
+            <th>Username</th>
+            <th>Ngày sinh</th>
+            <th>Địa chỉ</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="hover-zoom">
+        <tr *ngFor="let item of listAccount ; let i = index" appHighlight listColor="white">
+            <td scope="row">{{i+1}}</td>
+            <td class="tdmaxwidth">{{item.name | uppercase}}</td>
+            <td class="tdmaxwidth">{{item.username}}</td>
+            <td class="tdmaxwidth">{{item.birthday | date:'d/M/yyyy'}}</td>
+            <td class="tdmaxwidth">{{item.address}}</td>
+            <td>
+                <button class="btn btn-warning mr-2" (click)="sendItemToEdit(i)">Edit</button>
+                <span [hidden]="isShowDeleteButton"> | </span>
+                <button class="btn btn-danger" [hidden]="isShowDeleteButton" (click)="deleteAccount(i,item)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

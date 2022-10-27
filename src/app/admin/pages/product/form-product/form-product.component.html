@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="">Tên sản phẩm</label>
+            <input type="text" class="form-control" name="product-name" [hidden]="!showInput()" [(ngModel)]="product.productName">
+            <input type="text" class="form-control" name="product-name" [hidden]="showInput()" [(ngModel)]="product_edit.productName">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="">Giá bán</label>
+            <input type="number" min="0" class="form-control" name="price" [hidden]="!showInput()" [(ngModel)]="product.price">
+            <input type="number" min="0" class="form-control" name="price" [hidden]="showInput()" [(ngModel)]="product_edit.price">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="">Số lượng</label>
+            <input type="number" min="0" class="form-control" name="quantity" [hidden]="!showInput()" [(ngModel)]="product.quantity">
+            <input type="number" min="0" class="form-control" name="quantity" [hidden]="showInput()" [(ngModel)]="product_edit.quantity">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="">Hình ảnh</label><br>
+            <select name="image" [hidden]="!showInput()" [(ngModel)]="product.imgUrl">
+                <option *ngFor="let img of img_array" [value]="baseImgUrl+img">{{img}}</option>
+            </select>
+
+            <select name="image" [hidden]="showInput()" [(ngModel)]="product_edit.imgUrl">
+                <option *ngFor="let img of img_array" [value]="baseImgUrl+img">{{img}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <button class="btn btn-primary" [hidden]="!showInput()" (click)="doAddProduct()">Thêm</button>
+    <button class="btn btn-primary" [hidden]="showInput()" (click)="doUpdate()">Lưu thay đổi</button>
+</div>

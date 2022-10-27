@@ -1,0 +1,63 @@
+#sidebarMenu {
+    height: calc(100vh - 40px);
+    background-color: rgb(22, 92, 92);
+    ul {
+        li{
+            a {
+                border-bottom: 1px solid gray;
+                color: white;
+                font-size: 15px;
+                // background-color: rgb(22, 92, 92);
+                &:hover {
+                    border-bottom: 2px solid rgb(11, 240, 240);
+                    border-radius: 15px;
+                    color: yellow;
+                }
+                
+            }
+            &.active {
+                background-color: rgb(2, 53, 53);
+                border: 1px solid yellow;
+                border-left: 3.5px solid rgb(11, 240, 240);
+                border-right: 3.5px solid rgb(11, 240, 240);
+                border-radius: 18px;
+            }
+        }
+    }
+}
+main {
+    height: calc(100vh - 40px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+.card {
+    box-shadow: 0.5px 0.5px 5px rgb(34, 34, 34);
+}
+
+.image-custom {
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+}
+.bg-color {
+    border-right: 3px solid rgb(11, 240, 240);
+    border-left: 3px solid rgb(11, 240, 240);
+    border-radius: 15px;
+    span {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        font-size: 22px;
+        color:rgb(11, 240, 240);
+    }
+    
+}
+
+.bg-color:hover {
+     border-right: 3px solid red;
+     border-left: 3px solid red;
+     color: red;
+}
+
+

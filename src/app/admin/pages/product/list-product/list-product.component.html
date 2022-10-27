@@ -1,0 +1,31 @@
+<table class="table table-striped table-inverse table-responsive custom-table ">
+    <thead class="thead-inverse">
+        <tr class="textTrColor bg-secondary">
+            <th>STT</th>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng tồn</th>
+            <th>Giá</th>
+            <th>Ngày nhập</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="hover-zoom">
+        <tr *ngFor="let item of listProduct ; let i = index" appHighlight listColor="rgb(255, 145, 43)">
+            <td scope="row">{{i+1}}</td>
+            <td class="tdmaxwidth">
+                <img [src]="item.imgUrl" alt="no-image" width="60">
+            </td>
+            <td class="tdmaxwidth">{{item.productName}}</td>
+            <td class="tdmaxwidth">{{item.quantity}}</td>
+            <td class="tdmaxwidth">{{item.price | currency:'VND' | lowercase}}</td>
+            <td class="tdmaxwidth">{{item.dateProduct | date:'d/M/yyyy HH:mm:ss'}}</td>
+            <td>
+                <button class="btn btn-warning mr-2" (click)="sendItemToEdit(i)">Edit</button>
+                <span [hidden]="isShowDeleteButton"> | </span>
+                <button class="btn btn-danger" [hidden]="isShowDeleteButton" (click)="deleteProduct(i,item)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

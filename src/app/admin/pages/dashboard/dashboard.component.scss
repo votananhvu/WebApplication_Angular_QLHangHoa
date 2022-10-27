@@ -1,0 +1,55 @@
+.card {
+    background-color: rgb(22, 92, 92);
+}
+
+.card-body {
+    h4 {
+        color: white;
+        &:hover {
+            color: yellow;
+        }
+    }
+    hr {
+        border: 1px solid rgb(253, 253, 253);
+    }
+}
+
+.custom-card {
+    background-color:rgb(233, 239, 240);
+    border-color:rgb(151, 151, 240);
+    width: 60%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    div {
+        h5 {
+            color: rgb(3, 3, 112);
+            font-size: 14px;
+        }
+        p {
+            color: red;
+            font-size: 13px;
+        }
+        span {
+            color: rgb(228, 194, 6);
+        }
+    }
+}
+
+/* Zoom In */
+.hover-img{
+    div {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        &:hover {
+            -webkit-transform: scale(1.05);
+	        transform: scale(1.05);
+        }
+    }
+}
+
+.search-input {
+    border: 1px solid rgb(22, 92, 92);
+    background-color: rgb(175, 248, 248);
+}

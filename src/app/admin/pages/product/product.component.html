@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body icon-color">
+        <h4><span class="fas fa-apple-alt"></span> Quản lý Hàng hóa</h4>
+        <hr>
+        <app-form-product [hidden]="isShowForm == true" (add-product)="addProduct($event)" [product_edit]="product_needs_edit" (edited)="updateProduct($event)"></app-form-product>
+
+        <button class="btn btn-success" [hidden]="isShowForm != true" (click)="showForm()"> + Thêm Sản phẩm</button>
+        <button class="btn btn-secondary" [hidden]="isShowForm == true" (click)="closeForm()"> Đóng </button>
+        <hr>
+
+        <app-list-product [list-product]="products" (edit-product)="openUpdateForm($event)"></app-list-product>
+    </div>
+</div>

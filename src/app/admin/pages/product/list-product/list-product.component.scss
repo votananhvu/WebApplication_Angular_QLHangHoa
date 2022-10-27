@@ -1,0 +1,29 @@
+.tdmaxwidth {
+    max-width: 200px;
+}
+.textTrColor {
+    color: white;
+    th {
+        font-weight: normal;
+    }
+
+}
+
+.custom-table {
+    border: 1px solid rgb(75, 74, 74);
+    box-shadow: 5px 5px 5px gray;
+    border-radius: 5px;
+}
+
+.hover-zoom{
+    tr {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        &:hover {
+            -webkit-transform: scale(1.01);
+	        transform: scale(1.01);
+        }
+    }
+}

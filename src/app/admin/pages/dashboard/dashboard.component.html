@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <h4><span class="fas fa-star"></span> Trang sản phẩm <span class="fas fa-star"></span></h4>
+            </div>
+            <div class="col-3" align="right">
+                <!-- <span>Sắp xếp</span> -->
+                <div class="form-group">
+                    <label for="" style="color: white;">Sắp xếp :</label>
+                    <select class="custom-select" name="orderby" [(ngModel)]="optionValue" (click)="orderByProduct()">
+                        <!-- <option selected>Select one</option> -->
+                        <option value="ASC">Tăng dần</option>
+                        <option value="DESC">Giảm dần</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-5" align="right">
+                <input class="search-input" type="search" id="search" placeholder="Tìm kiếm..." [(ngModel)]="searchName">
+                <i class="fa fa-search" aria-hidden="true" style="color:white"></i>
+            </div>
+        </div>
+        
+        <hr>
+        <div class="row" >
+            <div class="col-3 hover-img mb-3" *ngFor="let item of searchProduct(); let i = index">
+                <div class="card custom-card">
+                  <img class="card-img-top" [src]="item.imgUrl" alt="">
+                  <div class="card-body">
+                    <h5 class="card-title">{{item.productName}}</h5>
+                    <p class="card-text">{{item.price | currency:'VND' | lowercase}}</p>
+                    
+                  </div>
+                  <div class="card-footer" align="center">
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
